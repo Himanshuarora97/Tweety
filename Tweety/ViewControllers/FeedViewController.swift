@@ -118,6 +118,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (tweets.isEmpty) {
+            setEmptyView()
+            return 0
+        }
+        if (tableView.backgroundView != nil) {
+            restore()
+        }
         return tweets.count
     }
 
@@ -206,6 +213,16 @@ extension FeedViewController {
     private func logoutFromApp() {
         AuthService.shared.logOutUser()
         tableView.reloadData()
+    }
+    
+    func setEmptyView() {
+        let emptyView = FeedEmptyView(frame: CGRect(x: tableView.center.x, y: tableView.center.y, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        tableView.backgroundView = emptyView
+        tableView.separatorStyle = .none
+    }
+    
+    func restore() {
+        tableView.backgroundView = nil
     }
     
 }

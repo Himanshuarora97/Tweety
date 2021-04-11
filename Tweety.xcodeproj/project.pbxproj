@@ -40,6 +40,7 @@
 		230191E226239599008C3F40 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230191E126239599008C3F40 /* UITableView+Extensions.swift */; };
 		2301920126239607008C3F40 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301920026239607008C3F40 /* TimeHelper.swift */; };
 		2301920626239636008C3F40 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301920526239636008C3F40 /* UIView+Extensions.swift */; };
+		2301920B26239C52008C3F40 /* FeedEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301920A26239C52008C3F40 /* FeedEmptyView.swift */; };
 		6787C158918F39BE7A831340 /* Pods_Tweety_TweetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952ADB9CD9766185C0B0E875 /* Pods_Tweety_TweetyUITests.framework */; };
 		E753AECC9E494CD7A9B07377 /* Pods_TweetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,7 @@
 		230191E126239599008C3F40 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		2301920026239607008C3F40 /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		2301920526239636008C3F40 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2301920A26239C52008C3F40 /* FeedEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEmptyView.swift; sourceTree = "<group>"; };
 		25F6108A8788030E0A982244 /* Pods-TweetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetyTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetyTests/Pods-TweetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A397BEE9E9E0BAF1C3F298F /* Pods-Tweety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweety.release.xcconfig"; path = "Target Support Files/Pods-Tweety/Pods-Tweety.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				230191C426237E0C008C3F40 /* cells */,
 				23019091262351EB008C3F40 /* Tweety-views */,
+				2301920A26239C52008C3F40 /* FeedEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				23019088262350B1008C3F40 /* KeyboardListener.swift in Sources */,
 				2301908026234FD4008C3F40 /* UIFont+Extensions.swift in Sources */,
 				230191E226239599008C3F40 /* UITableView+Extensions.swift in Sources */,
+				2301920B26239C52008C3F40 /* FeedEmptyView.swift in Sources */,
 				230191D8262388A7008C3F40 /* WeakArray.swift in Sources */,
 				2301915926237448008C3F40 /* Constants.swift in Sources */,
 				2301915F26237480008C3F40 /* AuthService.swift in Sources */,
