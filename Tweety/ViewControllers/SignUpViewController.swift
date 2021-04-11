@@ -110,6 +110,7 @@ class SignUpViewController: UIViewController {
         let imageView = UIImageView(image: image)
         navigationItem.titleView = imageView
         navigationController?.navigationBar.barTintColor = .white
+        navigationItem.backButtonTitle = "Login"
     }
 
 }

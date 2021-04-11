@@ -19,6 +19,8 @@ target 'Tweety' do
   pod "SuperStackView"
   
   pod 'Toast-Swift', '~> 5.0.1'
+  
+  pod 'SDWebImage', '~> 5.0'
 
   target 'TweetyTests' do
     inherit! :search_paths

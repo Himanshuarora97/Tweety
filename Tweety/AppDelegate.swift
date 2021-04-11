@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initializeWindow(){
-        let tabController = UINavigationController(rootViewController: LoginViewController())
+        let tabController = TweetyUINavigationController(rootViewController: FeedViewController())
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()
