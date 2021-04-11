@@ -15,6 +15,22 @@
 		23018FC026231917008C3F40 /* TweetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23018FBF26231917008C3F40 /* TweetyTests.swift */; };
 		23018FCB26231917008C3F40 /* TweetyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23018FCA26231917008C3F40 /* TweetyUITests.swift */; };
 		2301905C2623351E008C3F40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2301905B2623351E008C3F40 /* GoogleService-Info.plist */; };
+		2301907626234F16008C3F40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301907526234F16008C3F40 /* LoginViewController.swift */; };
+		2301908026234FD4008C3F40 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301907F26234FD4008C3F40 /* UIFont+Extensions.swift */; };
+		23019088262350B1008C3F40 /* KeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23019087262350B1008C3F40 /* KeyboardListener.swift */; };
+		2301908D26235174008C3F40 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301908C26235174008C3F40 /* UIColor+Colors.swift */; };
+		230190932623526B008C3F40 /* TweetyInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190922623526B008C3F40 /* TweetyInputField.swift */; };
+		2301909826235746008C3F40 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301909726235746008C3F40 /* SignUpViewController.swift */; };
+		230190C826236374008C3F40 /* UIView+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190C726236374008C3F40 /* UIView+Modal.swift */; };
+		230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190CC2623643D008C3F40 /* LoadingDialogView.swift */; };
+		230190FB26236B8A008C3F40 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */; };
+		2301914826237219008C3F40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301914726237219008C3F40 /* String+Extensions.swift */; };
+		230191512623740A008C3F40 /* FBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230191502623740A008C3F40 /* FBCollection.swift */; };
+		2301915926237448008C3F40 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301915826237448008C3F40 /* Constants.swift */; };
+		2301915F26237480008C3F40 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301915E26237480008C3F40 /* AuthService.swift */; };
+		2301917E26237534008C3F40 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301917D26237534008C3F40 /* User.swift */; };
+		2301918626237561008C3F40 /* TweetyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301918526237561008C3F40 /* TweetyCodable.swift */; };
+		2301918B2623758D008C3F40 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301918A2623758D008C3F40 /* UserService.swift */; };
 		6787C158918F39BE7A831340 /* Pods_Tweety_TweetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952ADB9CD9766185C0B0E875 /* Pods_Tweety_TweetyUITests.framework */; };
 		E753AECC9E494CD7A9B07377 /* Pods_TweetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +69,22 @@
 		23018FCA26231917008C3F40 /* TweetyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetyUITests.swift; sourceTree = "<group>"; };
 		23018FCC26231917008C3F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2301905B2623351E008C3F40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2301907526234F16008C3F40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2301907F26234FD4008C3F40 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		23019087262350B1008C3F40 /* KeyboardListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardListener.swift; sourceTree = "<group>"; };
+		2301908C26235174008C3F40 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		230190922623526B008C3F40 /* TweetyInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetyInputField.swift; sourceTree = "<group>"; };
+		2301909726235746008C3F40 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		230190C726236374008C3F40 /* UIView+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modal.swift"; sourceTree = "<group>"; };
+		230190CC2623643D008C3F40 /* LoadingDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialogView.swift; sourceTree = "<group>"; };
+		230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2301914726237219008C3F40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		230191502623740A008C3F40 /* FBCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCollection.swift; sourceTree = "<group>"; };
+		2301915826237448008C3F40 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2301915E26237480008C3F40 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		2301917D26237534008C3F40 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2301918526237561008C3F40 /* TweetyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetyCodable.swift; sourceTree = "<group>"; };
+		2301918A2623758D008C3F40 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		25F6108A8788030E0A982244 /* Pods-TweetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetyTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetyTests/Pods-TweetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A397BEE9E9E0BAF1C3F298F /* Pods-Tweety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweety.release.xcconfig"; path = "Target Support Files/Pods-Tweety/Pods-Tweety.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +146,11 @@
 		23018FA726231914008C3F40 /* Tweety */ = {
 			isa = PBXGroup;
 			children = (
+				2301917C26237527008C3F40 /* Models */,
+				2301907D26234F6C008C3F40 /* Helpers */,
+				2301907426234EBA008C3F40 /* Services */,
+				2301907326234EAA008C3F40 /* Views */,
+				2301907226234E96008C3F40 /* ViewControllers */,
 				23018FA826231914008C3F40 /* AppDelegate.swift */,
 				23018FAC26231914008C3F40 /* ViewController.swift */,
 				23018FB126231916008C3F40 /* Assets.xcassets */,
@@ -140,6 +177,65 @@
 				23018FCC26231917008C3F40 /* Info.plist */,
 			);
 			path = TweetyUITests;
+			sourceTree = "<group>";
+		};
+		2301907226234E96008C3F40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2301907526234F16008C3F40 /* LoginViewController.swift */,
+				2301909726235746008C3F40 /* SignUpViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2301907326234EAA008C3F40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23019091262351EB008C3F40 /* Tweety-views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2301907426234EBA008C3F40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2301915E26237480008C3F40 /* AuthService.swift */,
+				2301918A2623758D008C3F40 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2301907D26234F6C008C3F40 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2301907F26234FD4008C3F40 /* UIFont+Extensions.swift */,
+				23019087262350B1008C3F40 /* KeyboardListener.swift */,
+				2301908C26235174008C3F40 /* UIColor+Colors.swift */,
+				230190C726236374008C3F40 /* UIView+Modal.swift */,
+				230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */,
+				2301914726237219008C3F40 /* String+Extensions.swift */,
+				230191502623740A008C3F40 /* FBCollection.swift */,
+				2301915826237448008C3F40 /* Constants.swift */,
+				2301918526237561008C3F40 /* TweetyCodable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		23019091262351EB008C3F40 /* Tweety-views */ = {
+			isa = PBXGroup;
+			children = (
+				230190922623526B008C3F40 /* TweetyInputField.swift */,
+				230190CC2623643D008C3F40 /* LoadingDialogView.swift */,
+			);
+			path = "Tweety-views";
+			sourceTree = "<group>";
+		};
+		2301917C26237527008C3F40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2301917D26237534008C3F40 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A75F9035598804E1C71B0091 /* Frameworks */ = {
@@ -439,7 +535,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230190C826236374008C3F40 /* UIView+Modal.swift in Sources */,
+				2301907626234F16008C3F40 /* LoginViewController.swift in Sources */,
+				2301918B2623758D008C3F40 /* UserService.swift in Sources */,
+				2301908D26235174008C3F40 /* UIColor+Colors.swift in Sources */,
+				230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */,
+				2301917E26237534008C3F40 /* User.swift in Sources */,
+				2301914826237219008C3F40 /* String+Extensions.swift in Sources */,
+				2301918626237561008C3F40 /* TweetyCodable.swift in Sources */,
+				2301909826235746008C3F40 /* SignUpViewController.swift in Sources */,
 				23018FAD26231914008C3F40 /* ViewController.swift in Sources */,
+				230191512623740A008C3F40 /* FBCollection.swift in Sources */,
+				230190FB26236B8A008C3F40 /* UIViewController+Extensions.swift in Sources */,
+				23019088262350B1008C3F40 /* KeyboardListener.swift in Sources */,
+				2301908026234FD4008C3F40 /* UIFont+Extensions.swift in Sources */,
+				2301915926237448008C3F40 /* Constants.swift in Sources */,
+				2301915F26237480008C3F40 /* AuthService.swift in Sources */,
+				230190932623526B008C3F40 /* TweetyInputField.swift in Sources */,
 				23018FA926231914008C3F40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,7 +722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M37QH87NJJ;
+				DEVELOPMENT_TEAM = 6734VCH36G;
 				INFOPLIST_FILE = Tweety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -630,7 +742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M37QH87NJJ;
+				DEVELOPMENT_TEAM = 6734VCH36G;
 				INFOPLIST_FILE = Tweety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
