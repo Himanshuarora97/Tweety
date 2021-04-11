@@ -182,12 +182,35 @@ extension LoginViewController {
             showToast(message: "password length should be greater than 6")
             return
         }
-        loadingIndicator.show()
+        
+        loggingIn(withEmail: email, password: password)
     }
     
     @objc func didTapOnSignUp() {
 //        let vc = SignUpViewController()
 //        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+// MARK: Services
+extension LoginViewController {
+    
+    private func loggingIn(withEmail email: String, password: String) {
+        loadingIndicator.show()
+        AuthService.shared.signIn(with: email, password: password) { (error) in
+            self.handleResponse(error: error)
+        }
+    }
+    
+    private func handleResponse(error: Error?) {
+        loadingIndicator.dismiss(animated: true)
+        if let error = error {
+            print(error)
+            showToast(message: error.localizedDescription)
+        }
+        
+        // now success
     }
     
 }

@@ -12,6 +12,9 @@ target 'Tweety' do
   pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '6.34.0'
   pod 'Firebase/Auth'
   
+  # added this pod for managing Firestore - Codable
+  pod 'FirebaseFirestoreSwift'
+  
   # flexible stackview, https://github.com/Himanshuarora97/SuperStackView
   pod "SuperStackView"
   

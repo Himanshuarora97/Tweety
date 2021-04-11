@@ -9,7 +9,7 @@ import UIKit
 
 protocol Modal {
     func show(animated:Bool, showOnKeyboard: Bool)
-    func dismiss(animated:Bool, type: ModelAnimType)
+    func dismiss(animated:Bool)
     var backgroundView:UIView {get}
     var dialogView:UIView {get set}
 }
@@ -42,7 +42,7 @@ extension Modal where Self:UIView{
         }
     }
     
-    func dismiss(animated:Bool, type: ModelAnimType = .translation){
+    func dismiss(animated:Bool = true){
         if animated {
             hideAnimation()
         }else{
