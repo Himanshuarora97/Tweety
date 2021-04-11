@@ -162,8 +162,10 @@ extension TweetTableViewCell {
         fullNameLabel.text = tweet.user.fullName
         tweetLabel.text = tweet.tweetText
         if let profileUrl = tweet.user.profileUrl, !profileUrl.isEmpty,
-           let url = URL(string: profileUrl){
-            avatarImage.sd_setImage(with: url, placeholderImage: UIImage(named: "commodity_placeholder"), options: [], completed: nil)
+           let url = URL(string: profileUrl) {
+            avatarImage.sd_setImage(with: url, placeholderImage: UIImage(named: "default_avatar"), options: [], completed: nil)
+        } else {
+            avatarImage.image = UIImage.init(named: "default_avatar")
         }
         timerUpdated()
     }
