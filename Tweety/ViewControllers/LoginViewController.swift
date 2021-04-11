@@ -60,6 +60,8 @@ class LoginViewController: UIViewController {
     
     private var signUpBottomConstraint = NSLayoutConstraint()
     
+    private var loadingIndicator = LoadingDialogView(title: "Authenticating...")
+    
     private lazy var signUpLabel: UILabel = {
         let label = UILabel()
         label.isUserInteractionEnabled = true
@@ -163,6 +165,7 @@ extension LoginViewController {
 extension LoginViewController {
     
     @objc func didTapOnLogInBtn() {
+        loadingIndicator.show(animated: true, showOnKeyboard: true)
         guard let email = userNameInputField.inputField.text, !email.isEmpty else {
             return
         }
@@ -172,8 +175,8 @@ extension LoginViewController {
     }
     
     @objc func didTapOnSignUp() {
-        let vc = SignUpViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = SignUpViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

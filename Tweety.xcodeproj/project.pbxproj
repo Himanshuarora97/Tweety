@@ -21,6 +21,8 @@
 		2301908D26235174008C3F40 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301908C26235174008C3F40 /* UIColor+Colors.swift */; };
 		230190932623526B008C3F40 /* TweetyInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190922623526B008C3F40 /* TweetyInputField.swift */; };
 		2301909826235746008C3F40 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301909726235746008C3F40 /* SignUpViewController.swift */; };
+		230190C826236374008C3F40 /* UIView+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190C726236374008C3F40 /* UIView+Modal.swift */; };
+		230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190CC2623643D008C3F40 /* LoadingDialogView.swift */; };
 		6787C158918F39BE7A831340 /* Pods_Tweety_TweetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952ADB9CD9766185C0B0E875 /* Pods_Tweety_TweetyUITests.framework */; };
 		E753AECC9E494CD7A9B07377 /* Pods_TweetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 		2301908C26235174008C3F40 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		230190922623526B008C3F40 /* TweetyInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetyInputField.swift; sourceTree = "<group>"; };
 		2301909726235746008C3F40 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		230190C726236374008C3F40 /* UIView+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modal.swift"; sourceTree = "<group>"; };
+		230190CC2623643D008C3F40 /* LoadingDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialogView.swift; sourceTree = "<group>"; };
 		25F6108A8788030E0A982244 /* Pods-TweetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetyTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetyTests/Pods-TweetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A397BEE9E9E0BAF1C3F298F /* Pods-Tweety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweety.release.xcconfig"; path = "Target Support Files/Pods-Tweety/Pods-Tweety.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				2301907F26234FD4008C3F40 /* UIFont+Extensions.swift */,
 				23019087262350B1008C3F40 /* KeyboardListener.swift */,
 				2301908C26235174008C3F40 /* UIColor+Colors.swift */,
+				230190C726236374008C3F40 /* UIView+Modal.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				230190922623526B008C3F40 /* TweetyInputField.swift */,
+				230190CC2623643D008C3F40 /* LoadingDialogView.swift */,
 			);
 			path = "Tweety-views";
 			sourceTree = "<group>";
@@ -497,8 +503,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230190C826236374008C3F40 /* UIView+Modal.swift in Sources */,
 				2301907626234F16008C3F40 /* LoginViewController.swift in Sources */,
 				2301908D26235174008C3F40 /* UIColor+Colors.swift in Sources */,
+				230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */,
 				2301909826235746008C3F40 /* SignUpViewController.swift in Sources */,
 				23018FAD26231914008C3F40 /* ViewController.swift in Sources */,
 				23019088262350B1008C3F40 /* KeyboardListener.swift in Sources */,
