@@ -205,6 +205,14 @@ extension LoginViewController {
             return
         }
         
+        self.dismiss(animated: true, completion: nil)
+        guard let window =  UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
+            return
+        }
+        guard let feedVC = window.rootViewController as? FeedViewController else {
+            return
+        }
+        feedVC.configureUI()
         // now success
     }
     

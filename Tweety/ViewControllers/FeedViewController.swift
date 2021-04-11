@@ -39,17 +39,37 @@ class FeedViewController: UIViewController {
     }()
     
     private var tweets = [Tweet]()
+    private var isViewAlreadyLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setUpViews()
-        setUpConstraints()
+        
+        if (!AuthService.shared.isUserLoggedIn()) {
+            showLoginViewController()
+            return
+        }
+        
+        configureUI()
+    }
+    
+    private func showLoginViewController() {
+        let vc = TweetyUINavigationController(rootViewController: LoginViewController())
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func configureUI() {
+        if (!isViewAlreadyLoaded) {
+            isViewAlreadyLoaded = true
+            setUpViews()
+            setUpConstraints()
+        }
+        FeedService.shared.addListener(self)
     }
     
     private func setUpViews() {
         self.view.backgroundColor = .bgColor
-        FeedService.shared.addListener(self)
         setUpNavigation()
         setUpTableView()
         setUpAddTweetButton()
@@ -213,8 +233,11 @@ extension FeedViewController {
     }
     
     private func logoutFromApp() {
+        showLoginViewController()
         AuthService.shared.logOutUser()
+        tweets = [Tweet]()
         tableView.reloadData()
+        FeedService.shared.removeListener(self)
     }
     
     func setEmptyView() {
