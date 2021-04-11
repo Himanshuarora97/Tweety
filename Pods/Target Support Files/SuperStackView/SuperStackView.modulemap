@@ -1,0 +1,6 @@
+framework module SuperStackView {
+  umbrella header "SuperStackView-umbrella.h"
+
+  export *
+  module * { export * }
+}
