@@ -73,12 +73,14 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
   - SuperStackView (0.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `6.34.0`)
   - SuperStackView
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -95,6 +97,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SuperStackView
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   FirebaseFirestore:
@@ -121,7 +124,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SuperStackView: 2f0d30f12f4119346a170d3328a8ffabad2526d8
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: f6c8a2882f5bbf208972eb84361fa5747b3906aa
+PODFILE CHECKSUM: 1ca46eea642a430b25de96b8dcf132489db35920
 
 COCOAPODS: 1.10.1

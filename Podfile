@@ -14,6 +14,8 @@ target 'Tweety' do
   
   # flexible stackview, https://github.com/Himanshuarora97/SuperStackView
   pod "SuperStackView"
+  
+  pod 'Toast-Swift', '~> 5.0.1'
 
   target 'TweetyTests' do
     inherit! :search_paths

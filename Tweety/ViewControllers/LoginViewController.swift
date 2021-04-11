@@ -165,7 +165,8 @@ extension LoginViewController {
 extension LoginViewController {
     
     @objc func didTapOnLogInBtn() {
-        loadingIndicator.show(animated: true, showOnKeyboard: true)
+        showToast(message: "This is the sample message")
+//        loadingIndicator.show(animated: true, showOnKeyboard: true)
         guard let email = userNameInputField.inputField.text, !email.isEmpty else {
             return
         }
