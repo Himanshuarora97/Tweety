@@ -23,4 +23,10 @@ struct Tweet: Identifiable, Codable {
         case user
     }
     
+    func getUpdatedTweet(text: String) -> Tweet {
+        let newTweet = Tweet(id: id, tweetText: text, timestamp: timestamp, user: user)
+        return newTweet
+    }
+    
+    
 }

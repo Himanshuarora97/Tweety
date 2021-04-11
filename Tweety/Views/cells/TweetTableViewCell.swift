@@ -19,7 +19,6 @@ class TweetTableViewCell: UITableViewCell {
     private lazy var avatarImage: UIImageView = {
         let imageView = UIImageView()
         let imageSize: CGFloat = 50
-        let image = UIImage(named: "imageName")
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = imageSize/2
         imageView.clipsToBounds = true

@@ -144,6 +144,8 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 extension FeedViewController {
     
     @objc func didTapOnAddTweetBtn() {
+        let vc = TweetyUINavigationController(rootViewController: TweetViewController())
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func didTapOnLogoutBtn() {
