@@ -74,6 +74,9 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
   - SuperStackView (0.0.1)
   - Toast-Swift (5.0.1)
 
@@ -82,6 +85,7 @@ DEPENDENCIES:
   - Firebase/Core
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `6.34.0`)
   - FirebaseFirestoreSwift
+  - SDWebImage (~> 5.0)
   - SuperStackView
   - Toast-Swift (~> 5.0.1)
 
@@ -100,6 +104,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - SDWebImage
     - SuperStackView
     - Toast-Swift
 
@@ -128,9 +133,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
   SuperStackView: 2f0d30f12f4119346a170d3328a8ffabad2526d8
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: f79cbec3dd308b5145b6edad57d1d116b4f2b746
+PODFILE CHECKSUM: 255ab7851d02a2bfda73ce26e91b4cba2050ae50
 
 COCOAPODS: 1.10.1
