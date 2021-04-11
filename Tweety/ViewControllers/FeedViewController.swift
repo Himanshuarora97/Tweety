@@ -24,6 +24,16 @@ class FeedViewController: UIViewController {
         let button = UIButton(type: .custom)
         button.backgroundColor = .brandBlueColor
         button.setImage(UIImage(named: "ic_add_tweet"), for: .normal)
+        button.addTarget(self, action: #selector(didTapOnAddTweetBtn), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var logoutButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.titleLabel?.font = .semibold(size: 14)
+        button.setTitle("Log out", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.addTarget(self, action: #selector(didTapOnLogoutBtn), for: .touchUpInside)
         return button
     }()
     
@@ -46,6 +56,7 @@ class FeedViewController: UIViewController {
         let imageView = UIImageView(image: image)
         navigationItem.titleView = imageView
         navigationController?.navigationBar.barTintColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoutButton)
     }
     
     private func setUpTableView() {
@@ -57,9 +68,11 @@ class FeedViewController: UIViewController {
         view.addSubview(addTweetButton)
     }
     
-
+    
 }
 
+
+// MARK: Constraints
 extension FeedViewController {
     
     private func setUpConstraints() {
@@ -87,6 +100,42 @@ extension FeedViewController {
         addTweetButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
         addTweetButton.layer.cornerRadius = buttonSize/2
+    }
+    
+}
+
+
+// MARK: Selectors
+extension FeedViewController {
+    
+    @objc func didTapOnAddTweetBtn() {
+    }
+    
+    @objc func didTapOnLogoutBtn() {
+        showLogoutAlert()
+    }
+    
+}
+
+
+// MARK: Helpers
+extension FeedViewController {
+    
+    private func showLogoutAlert(){
+        let alert = UIAlertController(title: "Are you sure you want to log out?", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "No", style: .default, handler: {(alert: UIAlertAction!) -> Void in
+        })
+        let logout = UIAlertAction(title: "Yes", style: .destructive, handler: {(alert: UIAlertAction!) -> Void in
+            self.logoutFromApp()
+        })
+        alert.addAction(cancel)
+        alert.addAction(logout)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func logoutFromApp() {
+        AuthService.shared.logOutUser()
+        tableView.reloadData()
     }
     
 }
