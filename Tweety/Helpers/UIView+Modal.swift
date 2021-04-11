@@ -20,7 +20,7 @@ enum ModelAnimType: Int {
 
 extension Modal where Self:UIView{
     
-    func show(animated:Bool, showOnKeyboard: Bool = false){
+    func show(animated:Bool = true, showOnKeyboard: Bool = true){
         // dismiss on click outside (enable or disable the user interaction)
         self.backgroundView.isUserInteractionEnabled = false
         self.backgroundView.alpha = 0

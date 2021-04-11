@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     private lazy var userNameInputField: TweetyInputField = {
         let field = TweetyInputField()
         field.delegate = self
+        field.inputField.keyboardType = .emailAddress
         field.inputField.returnKeyType = .next
         field.setPlaceholder(text: "Email")
         return field
@@ -165,14 +166,23 @@ extension LoginViewController {
 extension LoginViewController {
     
     @objc func didTapOnLogInBtn() {
-        showToast(message: "This is the sample message")
-//        loadingIndicator.show(animated: true, showOnKeyboard: true)
         guard let email = userNameInputField.inputField.text, !email.isEmpty else {
+            showToast(message: "Please enter email")
+            return
+        }
+        if (!email.isValidEmail) {
+            showToast(message: "Please enter valid email")
             return
         }
         guard let password = passwordInputField.inputField.text, !password.isEmpty else {
+            showToast(message: "Please enter password")
             return
         }
+        if (password.count <= 6) {
+            showToast(message: "password length should be greater than 6")
+            return
+        }
+        loadingIndicator.show()
     }
     
     @objc func didTapOnSignUp() {

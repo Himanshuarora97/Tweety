@@ -24,6 +24,7 @@
 		230190C826236374008C3F40 /* UIView+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190C726236374008C3F40 /* UIView+Modal.swift */; };
 		230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190CC2623643D008C3F40 /* LoadingDialogView.swift */; };
 		230190FB26236B8A008C3F40 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */; };
+		2301914826237219008C3F40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301914726237219008C3F40 /* String+Extensions.swift */; };
 		6787C158918F39BE7A831340 /* Pods_Tweety_TweetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952ADB9CD9766185C0B0E875 /* Pods_Tweety_TweetyUITests.framework */; };
 		E753AECC9E494CD7A9B07377 /* Pods_TweetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		230190C726236374008C3F40 /* UIView+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modal.swift"; sourceTree = "<group>"; };
 		230190CC2623643D008C3F40 /* LoadingDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialogView.swift; sourceTree = "<group>"; };
 		230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2301914726237219008C3F40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		25F6108A8788030E0A982244 /* Pods-TweetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetyTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetyTests/Pods-TweetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A397BEE9E9E0BAF1C3F298F /* Pods-Tweety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweety.release.xcconfig"; path = "Target Support Files/Pods-Tweety/Pods-Tweety.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				2301908C26235174008C3F40 /* UIColor+Colors.swift */,
 				230190C726236374008C3F40 /* UIView+Modal.swift */,
 				230190FA26236B8A008C3F40 /* UIViewController+Extensions.swift */,
+				2301914726237219008C3F40 /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				2301907626234F16008C3F40 /* LoginViewController.swift in Sources */,
 				2301908D26235174008C3F40 /* UIColor+Colors.swift in Sources */,
 				230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */,
+				2301914826237219008C3F40 /* String+Extensions.swift in Sources */,
 				2301909826235746008C3F40 /* SignUpViewController.swift in Sources */,
 				23018FAD26231914008C3F40 /* ViewController.swift in Sources */,
 				230190FB26236B8A008C3F40 /* UIViewController+Extensions.swift in Sources */,
@@ -692,7 +696,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.procol.agribid-staging";
+				PRODUCT_BUNDLE_IDENTIFIER = com.source.tweety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -712,7 +716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.procol.agribid-staging";
+				PRODUCT_BUNDLE_IDENTIFIER = com.source.tweety;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
