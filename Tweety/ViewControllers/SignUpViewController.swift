@@ -75,6 +75,8 @@ class SignUpViewController: UIViewController {
     
     private var vStackBottomConstraint = NSLayoutConstraint()
     
+    private var loadingIndicator = LoadingDialogView(title: "Signing Up...")
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         registerKeyboardNotifications()
@@ -148,6 +150,12 @@ extension SignUpViewController {
     
     @objc func didTapOnSignUp() {
         guard let email = emailTextField.inputField.text else {
+            showToast(message: "Please enter email")
+            return
+        }
+        
+        if (!email.isValidEmail) {
+            showToast(message: "Please enter email")
             return
         }
         
@@ -155,16 +163,58 @@ extension SignUpViewController {
             return
         }
         
+        if (password.count <= 6) {
+            showToast(message: "password length should be greater than 6")
+            return
+        }
+        
         guard let username = userNameField.inputField.text else {
+            showToast(message: "Please enter username")
+            return
+        }
+        
+        if (password.count <= 2) {
+            showToast(message: "Username length should be greater than 3")
             return
         }
         
         guard let fullname = fullNameField.inputField.text else {
+            showToast(message: "Please enter full name")
             return
         }
         
+        if (password.count <= 2) {
+            showToast(message: "Full name length should be greater than 3")
+            return
+        }
+        
+        let user = User(username: username, email: email, fullName: fullname, profileUrl: nil)
+        
+        signningUp(withUser: user, password: password)
     }
     
+    
+}
+
+// MARK: Services
+extension SignUpViewController {
+    
+    private func signningUp(withUser user: User, password: String) {
+        loadingIndicator.show()
+        AuthService.shared.registerUser(withUser: user, password: password) { (error) in
+            self.handleResponse(error: error)
+        }
+    }
+    
+    private func handleResponse(error: Error?) {
+        loadingIndicator.dismiss()
+        if let error = error {
+            showToast(message: error.localizedDescription)
+            return
+        }
+        
+        // success
+    }
     
 }
 

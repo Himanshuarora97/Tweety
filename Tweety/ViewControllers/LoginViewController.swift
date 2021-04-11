@@ -178,17 +178,13 @@ extension LoginViewController {
             showToast(message: "Please enter password")
             return
         }
-        if (password.count <= 6) {
-            showToast(message: "password length should be greater than 6")
-            return
-        }
         
         loggingIn(withEmail: email, password: password)
     }
     
     @objc func didTapOnSignUp() {
-//        let vc = SignUpViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = SignUpViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -206,8 +202,8 @@ extension LoginViewController {
     private func handleResponse(error: Error?) {
         loadingIndicator.dismiss(animated: true)
         if let error = error {
-            print(error)
             showToast(message: error.localizedDescription)
+            return
         }
         
         // now success
