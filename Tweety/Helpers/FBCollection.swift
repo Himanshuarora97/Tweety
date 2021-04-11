@@ -13,4 +13,5 @@ class FBCollection {
     
     static let USER_COLLECTION_REF = COLLECTION_REF.collection("users")
     
+    static let TWEETS_COLLECTION_REF = COLLECTION_REF.collection("tweets")
 }

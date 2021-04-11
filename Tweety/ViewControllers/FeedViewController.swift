@@ -17,6 +17,7 @@ class FeedViewController: UIViewController {
         table.separatorStyle = .none
         table.backgroundColor = .clear
         table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        table.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.reuseIdentifier)
         return table
     }()
     
@@ -37,6 +38,8 @@ class FeedViewController: UIViewController {
         return button
     }()
     
+    private var tweets = [Tweet]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -46,6 +49,7 @@ class FeedViewController: UIViewController {
     
     private func setUpViews() {
         self.view.backgroundColor = .bgColor
+        FeedService.shared.addListener(self)
         setUpNavigation()
         setUpTableView()
         setUpAddTweetButton()
@@ -60,6 +64,8 @@ class FeedViewController: UIViewController {
     }
     
     private func setUpTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         view.addSubview(tableView)
     }
     
@@ -104,6 +110,28 @@ extension FeedViewController {
     
 }
 
+// MARK: UITableviewDelegate, UITableViewDatasource
+extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.reuseIdentifier, for: indexPath) as! TweetTableViewCell
+        let tweet = tweets[indexPath.row]
+        cell.tweet = tweet
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+}
+
 
 // MARK: Selectors
 extension FeedViewController {
@@ -114,6 +142,48 @@ extension FeedViewController {
     @objc func didTapOnLogoutBtn() {
         showLogoutAlert()
     }
+    
+}
+
+// MARK: Delegates
+extension FeedViewController: FeedServiceDelegate {
+    
+    func addTweet(_ tweet: Tweet) {
+        let isEmpty = tweets.isEmpty
+        tweets.append(tweet)
+        if (isEmpty) {
+            tableView.reloadData()
+        } else {
+            print("DEBUG://", tweet.id!, tweets)
+            tableView.insertRows(at: [IndexPath(row: tweets.endIndex - 1, section: 0)], with: .right)
+        }
+    }
+    
+    func updateTweetAvailable(_ tweet: Tweet) {
+        var changeIndex = [IndexPath]()
+        for (index, oldTweet) in tweets.enumerated() {
+            let oldId = oldTweet.id!
+            let newTweetId = tweet.id!
+            if (oldId == newTweetId) {
+                tweets[index] = tweet
+                changeIndex.append(IndexPath(row: index, section: 0))
+            }
+        }
+        tableView.reloadRows(at: changeIndex, with: .fade)
+    }
+    
+    func deleteAvailable(_ tweet: Tweet) {
+        if let index = tweets.firstIndex(where: { $0.id! == tweet.id }) {
+            tweets.remove(at: index)
+        }
+        let isEmpty = tweets.isEmpty
+        if (isEmpty) {
+            tableView.reloadData()
+        } else {
+            tableView.deleteRows(at: [IndexPath(row: tweets.endIndex, section: 0)], with: .left)
+        }
+    }
+
     
 }
 
