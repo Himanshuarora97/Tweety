@@ -47,10 +47,9 @@ class FeedViewController: UIViewController {
         
         if (!AuthService.shared.isUserLoggedIn()) {
             showLoginViewController()
-            return
+        } else {
+            configureUI()
         }
-        
-        configureUI()
     }
     
     private func showLoginViewController() {
@@ -68,6 +67,7 @@ class FeedViewController: UIViewController {
             setUpConstraints()
         }
         FeedService.shared.addListener(self)
+        FeedService.shared.startSnapshotListener()
     }
     
     private func setUpViews() {

@@ -204,16 +204,19 @@ extension LoginViewController {
             showToast(message: error.localizedDescription)
             return
         }
-        
-        self.dismiss(animated: true, completion: nil)
+        // now success
         guard let window =  UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
             return
         }
-        guard let feedVC = window.rootViewController as? FeedViewController else {
+        guard let topVC = (window.rootViewController as? UINavigationController)?.topViewController else {
+            return
+        }
+        guard let feedVC = topVC as? FeedViewController else {
             return
         }
         feedVC.configureUI()
-        // now success
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

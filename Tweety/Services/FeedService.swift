@@ -120,6 +120,7 @@ extension FeedService {
     
     func removeSnapshotListener() {
         snapshotListener?.remove()
+        snapshotListener = nil
     }
     
     func startSnapshotListener() {
