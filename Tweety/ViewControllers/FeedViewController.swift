@@ -155,8 +155,53 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.reuseIdentifier, for: indexPath) as! TweetTableViewCell
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
+        cell.delegate = self
         cell.selectionStyle = .none
         return cell
+    }
+    
+}
+
+extension FeedViewController: TweetTableViewCellDelegate {
+    
+    func didTapOnOptions(_ cell: TweetTableViewCell, tweet: Tweet) {
+        openActionSheet(tweet: tweet)
+    }
+    
+    private func openActionSheet(tweet: Tweet) {
+        let optionMenu = UIAlertController(title: nil, message: "Choose option", preferredStyle: .actionSheet)
+
+        let editTweetAction = UIAlertAction(title: "Edit Tweet", style: .default, handler:{ (UIAlertAction) in
+            self.editTweet(tweet: tweet)
+        })
+        
+        let deleteTweetAction = UIAlertAction(title: "Delete Tweet", style: .destructive, handler:{ (UIAlertAction) in
+            self.deleteTweet(tweet: tweet)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        
+        optionMenu.addAction(editTweetAction)
+        optionMenu.addAction(deleteTweetAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    private func editTweet(tweet: Tweet) {
+        let vc = TweetViewController(tweet: tweet)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func deleteTweet(tweet: Tweet) {
+        FeedService.shared.deleteTweet(tweet: tweet) { (error) in
+            if let error = error {
+                print("DEBUG:// ", "ERROR WHILE DELETE", error.localizedDescription)
+                return
+            }
+            print("DEBUG:// ", "DELETE SUCCESS")
+        }
     }
     
 }

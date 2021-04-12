@@ -14,6 +14,15 @@ struct Tweet: Identifiable, Codable {
     let tweetText: String
     let timestamp: Double
     let user: User
+    var isCurrentUserTweet: Bool {
+        get {
+            if let email = AuthService.shared.getLoginUser()?.email {
+                let tweetEmail = user.email
+                return email == tweetEmail
+            }
+            return false
+        }
+    }
 
     
     enum CodingKeys: String, CodingKey {

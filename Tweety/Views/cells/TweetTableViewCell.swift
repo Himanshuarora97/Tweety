@@ -160,6 +160,8 @@ extension TweetTableViewCell {
         userNameLabel.text = "@\(tweet.user.username)"
         fullNameLabel.text = tweet.user.fullName
         tweetLabel.text = tweet.tweetText
+        let isCurrentUser = tweet.isCurrentUserTweet
+        hStackView.setRowHidden(chevronDownBtn, isHidden: !isCurrentUser)
         if let profileUrl = tweet.user.profileUrl, !profileUrl.isEmpty,
            let url = URL(string: profileUrl) {
             avatarImage.sd_setImage(with: url, placeholderImage: UIImage(named: "default_avatar"), options: [], completed: nil)
