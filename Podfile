@@ -16,7 +16,7 @@ target 'Tweety' do
   pod 'FirebaseFirestoreSwift'
   
   # flexible stackview, https://github.com/Himanshuarora97/SuperStackView
-  pod "SuperStackView"
+  pod "SuperStackView", :git => 'https://github.com/Himanshuarora97/SuperStackView.git'
   
   pod 'Toast-Swift', '~> 5.0.1'
   

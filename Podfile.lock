@@ -86,7 +86,7 @@ DEPENDENCIES:
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `6.34.0`)
   - FirebaseFirestoreSwift
   - SDWebImage (~> 5.0)
-  - SuperStackView
+  - SuperStackView (from `https://github.com/Himanshuarora97/SuperStackView.git`)
   - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
@@ -105,18 +105,22 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
-    - SuperStackView
     - Toast-Swift
 
 EXTERNAL SOURCES:
   FirebaseFirestore:
     :git: https://github.com/invertase/firestore-ios-sdk-frameworks.git
     :tag: 6.34.0
+  SuperStackView:
+    :git: https://github.com/Himanshuarora97/SuperStackView.git
 
 CHECKOUT OPTIONS:
   FirebaseFirestore:
     :git: https://github.com/invertase/firestore-ios-sdk-frameworks.git
     :tag: 6.34.0
+  SuperStackView:
+    :commit: 749ab30adfa67205de69b6afb195622522176d61
+    :git: https://github.com/Himanshuarora97/SuperStackView.git
 
 SPEC CHECKSUMS:
   Firebase: fffddd0bab8677d07376538365faa93ff3889b39
@@ -137,6 +141,6 @@ SPEC CHECKSUMS:
   SuperStackView: 2f0d30f12f4119346a170d3328a8ffabad2526d8
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 255ab7851d02a2bfda73ce26e91b4cba2050ae50
+PODFILE CHECKSUM: 76579c9ed6a01bd1d439f16b50befc0ed2319407
 
 COCOAPODS: 1.10.1

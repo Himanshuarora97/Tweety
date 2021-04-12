@@ -134,6 +134,7 @@ open class SuperStackViewRow: UIView {
                                                                         layoutMarginsGuide.trailingAnchor)
         let bottomConstraint = contentView.bottomAnchor.constraint(equalTo:
                                                                     layoutMarginsGuide.bottomAnchor)
+        bottomConstraint.priority = UILayoutPriority(rawValue: UILayoutPriority.required.rawValue - 1)
         let topConstraint = contentView.topAnchor.constraint(equalTo:
                                                                 layoutMarginsGuide.topAnchor)
         

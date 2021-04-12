@@ -47,6 +47,7 @@
 		2301921F26239E91008C3F40 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301921E26239E91008C3F40 /* CircularProgressView.swift */; };
 		2301922426239EC6008C3F40 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301922326239EC6008C3F40 /* SoundHelper.swift */; };
 		2301922B26239F11008C3F40 /* birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2301922A26239F11008C3F40 /* birds.mp3 */; };
+		23A4D4B72624C15B00689993 /* TweetyUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4D4B62624C15B00689993 /* TweetyUIButton.swift */; };
 		6787C158918F39BE7A831340 /* Pods_Tweety_TweetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952ADB9CD9766185C0B0E875 /* Pods_Tweety_TweetyUITests.framework */; };
 		E753AECC9E494CD7A9B07377 /* Pods_TweetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		2301921E26239E91008C3F40 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		2301922326239EC6008C3F40 /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
 		2301922A26239F11008C3F40 /* birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birds.mp3; sourceTree = "<group>"; };
+		23A4D4B62624C15B00689993 /* TweetyUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetyUIButton.swift; sourceTree = "<group>"; };
 		25F6108A8788030E0A982244 /* Pods-TweetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetyTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetyTests/Pods-TweetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4022FE0904BDE203668F6407 /* Pods_TweetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A397BEE9E9E0BAF1C3F298F /* Pods-Tweety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweety.release.xcconfig"; path = "Target Support Files/Pods-Tweety/Pods-Tweety.release.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				2301921426239E09008C3F40 /* TweetyInputView.swift */,
 				2301921926239E5A008C3F40 /* TweetNowButton.swift */,
 				2301921E26239E91008C3F40 /* CircularProgressView.swift */,
+				23A4D4B62624C15B00689993 /* TweetyUIButton.swift */,
 			);
 			path = "Tweety-views";
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				230190CD2623643D008C3F40 /* LoadingDialogView.swift in Sources */,
 				2301921A26239E5A008C3F40 /* TweetNowButton.swift in Sources */,
 				2301917E26237534008C3F40 /* User.swift in Sources */,
+				23A4D4B72624C15B00689993 /* TweetyUIButton.swift in Sources */,
 				2301914826237219008C3F40 /* String+Extensions.swift in Sources */,
 				2301918626237561008C3F40 /* TweetyCodable.swift in Sources */,
 				2301909826235746008C3F40 /* SignUpViewController.swift in Sources */,
