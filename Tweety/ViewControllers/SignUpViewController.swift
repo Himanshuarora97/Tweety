@@ -214,7 +214,19 @@ extension SignUpViewController {
             return
         }
         
-        // success
+        guard let window =  UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
+            return
+        }
+        guard let topVC = (window.rootViewController as? UINavigationController)?.topViewController else {
+            return
+        }
+        guard let feedVC = topVC as? FeedViewController else {
+            return
+        }
+        // now update
+        feedVC.configureUI()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

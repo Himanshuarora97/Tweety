@@ -39,17 +39,39 @@ class FeedViewController: UIViewController {
     }()
     
     private var tweets = [Tweet]()
+    private var isViewAlreadyLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setUpViews()
-        setUpConstraints()
+        
+        if (!AuthService.shared.isUserLoggedIn()) {
+            showLoginViewController()
+        } else {
+            configureUI()
+        }
+    }
+    
+    private func showLoginViewController() {
+        DispatchQueue.main.async {
+            let vc = TweetyUINavigationController(rootViewController: LoginViewController())
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func configureUI() {
+        if (!isViewAlreadyLoaded) {
+            isViewAlreadyLoaded = true
+            setUpViews()
+            setUpConstraints()
+        }
+        FeedService.shared.addListener(self)
+        FeedService.shared.startSnapshotListener()
     }
     
     private func setUpViews() {
         self.view.backgroundColor = .bgColor
-        FeedService.shared.addListener(self)
         setUpNavigation()
         setUpTableView()
         setUpAddTweetButton()
@@ -159,12 +181,13 @@ extension FeedViewController: FeedServiceDelegate {
     
     func addTweet(_ tweet: Tweet) {
         let isEmpty = tweets.isEmpty
-        tweets.append(tweet)
         if (isEmpty) {
+            tweets.append(tweet)
             tableView.reloadData()
         } else {
+            tweets.insert(tweet, at: 0)
             print("DEBUG://", tweet.id!, tweets)
-            tableView.insertRows(at: [IndexPath(row: tweets.endIndex - 1, section: 0)], with: .right)
+            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
         }
     }
     
@@ -178,7 +201,10 @@ extension FeedViewController: FeedServiceDelegate {
                 changeIndex.append(IndexPath(row: index, section: 0))
             }
         }
-        tableView.reloadRows(at: changeIndex, with: .fade)
+        tweets = tweets.sorted(by: { (tweet1, tweet2) -> Bool in
+            return tweet1.timestamp > tweet2.timestamp
+        })
+        tableView.reloadData()
     }
     
     func deleteAvailable(_ tweet: Tweet) {
@@ -213,8 +239,12 @@ extension FeedViewController {
     }
     
     private func logoutFromApp() {
+        showLoginViewController()
         AuthService.shared.logOutUser()
+        tweets = [Tweet]()
         tableView.reloadData()
+        FeedService.shared.removeListener(self)
+        FeedService.shared.removeSnapshotListener()
     }
     
     func setEmptyView() {

@@ -22,6 +22,8 @@ class FeedService {
     
     static let shared = FeedService()
     
+    private var snapshotListener: ListenerRegistration?
+    
     
     init() {
         attachListener()
@@ -40,9 +42,12 @@ class FeedService {
     }
     
     
-    private func attachListener(toTweetId id: String? = nil) {
-        let query = FBCollection.TWEETS_COLLECTION_REF.whereField("tweet", isNotEqualTo: false)
-        query.addSnapshotListener { (querySnapshot, error) in
+    private func attachListener() {
+        if (snapshotListener != nil) {
+            return
+        }
+        let query = FBCollection.TWEETS_COLLECTION_REF.whereField("timestamp", isNotEqualTo: false).order(by: "timestamp")
+        snapshotListener = query.addSnapshotListener { (querySnapshot, error) in
             guard let snapshot = querySnapshot else {
                 print("Error fetching snapshots: \(error!)")
                 return
@@ -111,6 +116,15 @@ extension FeedService {
     
     func removeListener(_ object: AnyObject) {
         listeners.remove(element: object)
+    }
+    
+    func removeSnapshotListener() {
+        snapshotListener?.remove()
+        snapshotListener = nil
+    }
+    
+    func startSnapshotListener() {
+        attachListener()
     }
     
 }
