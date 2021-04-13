@@ -286,6 +286,7 @@ extension FeedViewController {
     
     private func logoutFromApp() {
         showLoginViewController()
+        
         AuthService.shared.logOutUser()
         tweets = [Tweet]()
         tableView.reloadData()
