@@ -16,7 +16,7 @@ class FeedViewController: UIViewController {
         table.estimatedRowHeight = 44
         table.separatorStyle = .none
         table.backgroundColor = .clear
-        table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         table.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.reuseIdentifier)
         return table
     }()
@@ -115,7 +115,7 @@ extension FeedViewController {
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func setUpAddTweetButtonConstraints() {
@@ -253,14 +253,15 @@ extension FeedViewController: FeedServiceDelegate {
     }
     
     func deleteAvailable(_ tweet: Tweet) {
-        if let index = tweets.firstIndex(where: { $0.id! == tweet.id }) {
-            tweets.remove(at: index)
+        guard let index = tweets.firstIndex(where: { $0.id! == tweet.id }) else {
+            return
         }
+        tweets.remove(at: index)
         let isEmpty = tweets.isEmpty
         if (isEmpty) {
             tableView.reloadData()
         } else {
-            tableView.deleteRows(at: [IndexPath(row: tweets.endIndex, section: 0)], with: .left)
+            tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .left)
         }
     }
 
@@ -285,6 +286,7 @@ extension FeedViewController {
     
     private func logoutFromApp() {
         showLoginViewController()
+        
         AuthService.shared.logOutUser()
         tweets = [Tweet]()
         tableView.reloadData()

@@ -37,8 +37,8 @@ class TweetTableViewCell: UITableViewCell {
     
     private lazy var userNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .regular(size: 12)
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
+        label.font = .semibold(size: 12)
         return label
     }()
     
@@ -73,13 +73,13 @@ class TweetTableViewCell: UITableViewCell {
         stackView.stack.axis = .horizontal
         stackView.hidesSeparatorsByDefault = true
         stackView.addRow(fullNameLabel)
-        stackView.addRow(tweetTimeLabel, inset: UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6))
-        stackView.addRow(chevronDownBtn)
+        stackView.addRow(tweetTimeLabel, inset: UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 2))
+        stackView.addRow(chevronDownBtn, inset: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 8))
         return stackView
     }()
     
-    private lazy var chevronDownBtn: UIButton = {
-        let btn = UIButton(type: .custom)
+    private lazy var chevronDownBtn: TweetyUIButton = {
+        let btn = TweetyUIButton(type: .custom)
         btn.setImage(UIImage.init(named: "chevron_down"), for: .normal)
         btn.setContentHuggingPriority(.required, for: .horizontal)
         btn.setContentCompressionResistancePriority(.required, for: .horizontal)
@@ -124,8 +124,8 @@ class TweetTableViewCell: UITableViewCell {
     
     private func setUpViews() {
         self.backgroundColor = .clear
-        vStackView.addRow(hStackView, inset: UIEdgeInsets(top: 6, left: 12, bottom: 2, right: 12))
-        vStackView.addRow(userNameLabel, inset: UIEdgeInsets(top: 2, left: 12, bottom: 2, right: 12))
+        vStackView.addRow(hStackView, inset: UIEdgeInsets(top: 6, left: 12, bottom: 0, right: 12))
+        vStackView.addRow(userNameLabel, inset: UIEdgeInsets(top: 0, left: 12, bottom: 2, right: 12))
         vStackView.addRow(tweetLabel, inset: UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12))
         self.addSubview(vStackView)
         self.addSubview(avatarImage)

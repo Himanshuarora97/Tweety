@@ -23,7 +23,7 @@ class FeedEmptyView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = "It's empty now, start your tweety jorney"
+        label.text = "It's empty now, start your tweety journey"
         label.font = .regular(size: 16)
         label.textAlignment = .center
         return label

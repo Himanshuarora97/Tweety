@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
         let field = TweetyInputField()
         field.inputField.keyboardType = .emailAddress
         field.inputField.returnKeyType = .next
+        field.delegate = self
         field.setPlaceholder(text: "Email")
         return field
     }()
@@ -30,6 +31,7 @@ class SignUpViewController: UIViewController {
     private lazy var passwordInputField: TweetyInputField = {
         let field = TweetyInputField()
         field.inputField.isSecureTextEntry = true
+        field.delegate = self
         field.inputField.returnKeyType = .next
         field.setPlaceholder(text: "Password")
         return field
@@ -37,6 +39,7 @@ class SignUpViewController: UIViewController {
     
     private lazy var userNameField: TweetyInputField = {
         let field = TweetyInputField()
+        field.delegate = self
         field.inputField.returnKeyType = .next
         field.setPlaceholder(text: "Username")
         return field
@@ -44,6 +47,7 @@ class SignUpViewController: UIViewController {
     
     private lazy var fullNameField: TweetyInputField = {
         let field = TweetyInputField()
+        field.delegate = self
         field.setPlaceholder(text: "Fullname")
         return field
     }()
@@ -242,5 +246,30 @@ extension SignUpViewController: KeyboardListener {
     func keyboardWillHide() {
         
     }
+    
+}
+
+
+extension SignUpViewController: TweetyInputFieldDelegate {
+    
+    func textFieldShouldReturn(_ inputView: TweetyInputField) -> Bool {
+        switch inputView {
+        case emailTextField:
+            passwordInputField.inputField.becomeFirstResponder()
+            break
+        case passwordInputField:
+            passwordInputField.inputField.becomeFirstResponder()
+            break
+        case userNameField:
+            passwordInputField.inputField.becomeFirstResponder()
+            break
+        case fullNameField:
+            passwordInputField.inputField.becomeFirstResponder()
+            break
+        default: break
+        }
+        return true
+    }
+    
     
 }
