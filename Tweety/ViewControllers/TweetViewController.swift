@@ -187,7 +187,10 @@ extension TweetViewController {
 extension TweetViewController: TweetNowButtonDelegate {
     
     func didTapOnTweetNowButton() {
-        guard let text = tweetInputView.text else { return }
+        guard let text = tweetInputView.text, !text.isEmpty else {
+            self.showToast(message: "Enter a valid tweet")
+            return
+        }
         if let tweet = tweet {
             updateTweet(tweet: tweet, text: text)
         } else {

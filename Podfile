@@ -6,7 +6,7 @@ target 'Tweety' do
   use_frameworks!
 
   # Pods for Tweety
-  pod 'Firebase/Core'
+#  pod 'Firebase/Core'
 #  pod 'Firebase/Firestore'
   # added this for development, above pod takes too much to build
   pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '6.34.0'
